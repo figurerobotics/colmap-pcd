@@ -1,4 +1,4 @@
-# How to build COLMAP using Docker
+# How to build COLMAP-PCD using Docker
 
 ## Requirements
 - A linux based host machine with at least one NVIDIA GPU<sup>[1](#f1)</sup>.
@@ -13,29 +13,14 @@
 
 `nvidia-smi`
 
-3. Setup the nvidia-toolkit on your host machine<sup>[3](#f3)</sup>:
+3. If GUI interface is perferred, run 
 
-For Ubuntu host machines: `./setup-ubuntu.sh`
+`make run-gui`
 
-For CentOS host machines: `./setup-centos.sh`
+4. If command line is fine, run
 
-4. Run the *quick-start* script, using the *full local path* to your prefered
-local working directory (a folder with your input files/images, etc.):
+`make run-term`
 
-`./quick-start.sh /path/where/your/working/folder/is`
-
-This will put you in a directory (inside the Docker container) mounted to the
-local path you specified. Now you can run COLMAP binaries<sup>[4](#f4)</sup>
-on your own inputs like this:
-
-`colmap automatic_reconstructor --image_path ./images --workspace_path .`
-
-## Build from Scratch
-
-After completing steps 1-3, you can alternatively build the docker image from
-scratch based on the **Dockerfile** (e.g., with your own modifications) using:
-
-`./build.sh /path/where/your/working/folder/is`
 
 ## Notes
 
